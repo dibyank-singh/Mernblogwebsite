@@ -13,7 +13,6 @@ const app=express();
 app.use(cors());
 app.use(bodyParser.json({extended:true}))
 app.use(bodyParser.urlencoded({extended:true})) 
-app.use("/" , Router); 
 
 const PORT= process.env.PORT || 8000 ;
 
@@ -26,9 +25,10 @@ if(process.env.NODE_ENV ==="production"){
     })
 } else {
     app.get("/",(req , res)=>{
-       res.send("api server is running test ")
+        res.send("api server is running test ")
     })
 }
+app.use( Router); 
 
 
 app.listen( PORT , ()=> console.log(`Server is runnning at ${PORT}`) )
