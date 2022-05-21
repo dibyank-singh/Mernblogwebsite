@@ -21,21 +21,7 @@ const __dirname= path.resolve()
 app.use( Router); 
 if(process.env.NODE_ENV ==="production"){ 
     app.use(express.static(path.join(__dirname ,"/client/build")))
-  // List of all the files that should be served as-is
-  
-  let protect = ['transformed.js', 'main.css', 'favicon.ico']
-  app.get("*", (req, res) => {
-
-  let path = req.params['0'].substring(1)
-
-  if (protect.includes(path)) {
-    // Return the actual file
-    res.sendFile(`${__dirname}client/build/${path}`);
-  } else {
-    // Otherwise, redirect to /build/index.html
-    res.sendFile(`${__dirname}client/build/index.html`);
-  }
-});
+ 
     // app.get("*",(req,res)=>{
     //     res.sendFile(path.resolve(__dirname,"client","build","index.html"))
     // })
