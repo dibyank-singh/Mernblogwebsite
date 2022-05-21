@@ -16,9 +16,9 @@ app.use(bodyParser.urlencoded({extended:true}))
 
 const PORT= process.env.PORT || 8000 ;
 
-app.use( Router); 
 const __dirname= path.resolve()
 
+app.use( Router); 
 if(process.env.NODE_ENV ==="production"){ 
     app.use(express.static(path.join(__dirname ,"/client/build")))
     app.get("*",(req,res)=>{
