@@ -16,6 +16,7 @@ app.use(bodyParser.urlencoded({extended:true}))
 
 const PORT= process.env.PORT || 8000 ;
 
+app.use( Router); 
 const __dirname= path.resolve()
 
 if(process.env.NODE_ENV ==="production"){ 
@@ -28,7 +29,6 @@ if(process.env.NODE_ENV ==="production"){
         res.send("api server is running test ")
     })
 }
-app.use( Router); 
 
 
 app.listen( PORT , ()=> console.log(`Server is runnning at ${PORT}`) )
