@@ -2,7 +2,7 @@ import express, { response } from "express"
 import Post from "../schema/postschema.js"
 import {uploadfileimg} from "../controler/imagecontroler.js"
 import upload from "../utils/upload.js"
-// const url ='http://localhost:8000' 
+// const url ='' 
 
 const router = express.Router();
 
