@@ -8,7 +8,7 @@ import cors from "cors"
 import bodyParser  from "body-parser";
 import path from "path";
 
-  
+   
 const app=express(); 
 app.use(cors());
 app.use(bodyParser.json({extended:true}))

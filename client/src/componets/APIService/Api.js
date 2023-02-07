@@ -1,6 +1,10 @@
 import axios from "axios"
 
+// for production level
 const url ='';
+
+// For local use
+// const url ='http://localhost:8000';
 
 export const createPost = async (post) => {
     try {
